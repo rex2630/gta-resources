@@ -92,6 +92,9 @@ AddEventHandler('disc-vehiclesales:newVehicles', function(newVehicles)
 end)
 
 Citizen.CreateThread(function()
+    while not ESXLoaded do
+        Citizen.Wait(10)
+    end
     Citizen.Wait(0)
     for k, v in pairs(Config.StoreAreas) do
         local marker = {
